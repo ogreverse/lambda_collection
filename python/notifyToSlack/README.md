@@ -7,3 +7,7 @@
 ## Slack Web Hook URL 取得先
 
 [https://api.slack.com/apps](https://api.slack.com/apps)
+
+## テスト実行時に使用するjsonファイル
+
+`test.json`  
