@@ -23,7 +23,7 @@ def lambda_handler(event, context):
 
         # ターゲット外のインスタンスであれば終了
         db_instance_identifier = result['DBSnapshots'][0]['DBInstanceIdentifier']
-        if db_instance_identifier in os.environ['TARGET_RDS_INSTANCES'].split(',') == False:
+        if (db_instance_identifier in os.environ['TARGET_RDS_INSTANCES'].split(',')) == False:
             return
 
         # snapshot ARNを取得
