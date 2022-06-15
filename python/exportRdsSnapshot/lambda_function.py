@@ -31,7 +31,7 @@ def lambda_handler(event, context):
     except client.exceptions.DBSnapshotNotFoundFault:
         print('スナップショットなし')
 
-    export_task_identifier='exporting_snapshot_' + datetime.now().strftime("%Y%m%d%H%M%S")
+    export_task_identifier = db_instance_identifier + '_' + datetime.now().strftime("%Y%m%d%H%M%S")
 
     response = client.start_export_task(
         ExportTaskIdentifier=export_task_identifier,
