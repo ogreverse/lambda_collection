@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-2:123456789012:rds-lambda:21be56ed-a058-49f5-8c98-aedd2564c486",
+      "EventSource": "aws:sns",
+      "Sns": {
+        "SignatureVersion": "1",
+        "Timestamp": "2019-01-02T12:45:07.000Z",
+        "Signature": "tcc6faL2yUC6dgZdmrwh1Y4cGa/ebXEkAi6RibDsvpi+tE/1+82j...65r==",
+        "SigningCertUrl": "https://sns.us-east-2.amazonaws.com/SimpleNotificationService-ac565b8b1a6c5d002d285f9598aa1d9b.pem",
+        "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+        "Message": "{\"Records\":[{\"eventVersion\":\"2.1\",\"eventSource\":\"aws:s3\",\"awsRegion\":\"ap-northeast-1\",\"eventTime\":\"2022-07-11T07:16:26.169Z\",\"eventName\":\"ObjectCreated:Put\",\"userIdentity\":{\"principalId\":\"AWS:AIDAR4KV3IOHGYNN4QMC2\"},\"requestParameters\":{\"sourceIPAddress\":\"153.240.220.192\"},\"responseElements\":{\"x-amz-request-id\":\"7A2GJPDM1S4FTES4\",\"x-amz-id-2\":\"qjm+rhWO2iQgGKsvYL4qRuTNl0WuXT6B0ECCJ1+2R4HxDzAnP7UCnkwA7vm7k8WEwe3TZYjxH8rfp6l854G8PKv5xeh3Otfg1NtCbJdKDWg=\"},\"s3\":{\"s3SchemaVersion\":\"1.0\",\"configurationId\":\"exported-snapshot-put\",\"bucket\":{\"name\":\"バケット名\",\"ownerIdentity\":{\"principalId\":\"AWJ9W9X2BKN1S\"},\"arn\":\"arn:aws:s3:::バケット名\"},\"object\":{\"key\":\"snapshot20220614061714/test/hoge.parquet\",\"size\":9,\"eTag\":\"199389a12492266114933fc428e8cfdc\",\"sequencer\":\"0062CBCE4A231658F2\"}}}]}",
+        "MessageAttributes": {},
+        "Type": "Notification",
+        "UnsubscribeUrl": "https://sns.us-east-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-east-2:123456789012:test-lambda:21be56ed-a058-49f5-8c98-aedd2564c486",
+        "TopicArn":"arn:aws:sns:us-east-2:123456789012:sns-lambda",
+        "Subject": "RDS Notification Message"
+      }
+    }
+  ]
+}
