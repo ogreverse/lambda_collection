@@ -64,6 +64,10 @@ def lambda_handler(event, context):
 
         # 元のファイルを削除
         s3.delete_object(Bucket=from_bucket, Key=from_key)
+
+        # _SUCCESSファイルを削除
+        successPath = from_key.replace(from_key.split('/')[-1], '_SUCCESS')
+        s3.delete_object(Bucket=from_bucket, Key=successPath)
     except Exception as e:
         print(e)
         print('Error getting object {} from bucket {}. Make sure they exist and your bucket is in the same region as this function.'.format(key, bucket))
