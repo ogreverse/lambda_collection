@@ -1,0 +1,31 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-1:{{{accountId}}}:ExampleTopic",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+        "TopicArn": "arn:aws:sns:us-east-1:123456789012:ExampleTopic",
+        "Subject": "example subject",
+        "Message": "{\"notificationType\":\"Complaint\",\"complaint\":{\"feedbackId\":\"01060182ab2c1c85-7ce7c1c7-8815-4c16-8779-c2dc84f1b2c5-000000\",\"complaintSubType\":null,\"complainedRecipients\":[{\"emailAddress\":\"complaint@simulator.amazonses.com\"}],\"timestamp\":\"2022-08-17T09:39:31.000Z\",\"userAgent\":\"Amazon SES Mailbox Simulator\",\"complaintFeedbackType\":\"abuse\",\"arrivalDate\":\"2022-08-17T09:39:31.276Z\"},\"mail\":{\"timestamp\":\"2022-08-17T09:39:28.057Z\",\"source\":\"noreply@artelier.co.jp\",\"sourceArn\":\"arn:aws:ses:ap-northeast-1:223613357640:identity/artelier.co.jp\",\"sourceIp\":\"110.133.47.137\",\"callerIdentity\":\"aidiot-ogura\",\"sendingAccountId\":\"223613357640\",\"messageId\":\"01060182ab2c10b9-d83d63d7-1a18-4a5e-b646-fa1249e6f7d3-000000\",\"destination\":[\"complaint@simulator.amazonses.com\"]}}",
+        "Timestamp": "1970-01-01T00:00:00.000Z",
+        "SignatureVersion": "1",
+        "Signature": "EXAMPLE",
+        "SigningCertUrl": "EXAMPLE",
+        "UnsubscribeUrl": "EXAMPLE",
+        "MessageAttributes": {
+          "Test": {
+            "Type": "String",
+            "Value": "TestString"
+          },
+          "TestBinary": {
+            "Type": "Binary",
+            "Value": "TestBinary"
+          }
+        }
+      }
+    }
+  ]
+}
