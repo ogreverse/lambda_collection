@@ -21,7 +21,7 @@ snapshotの作成後のイベントメッセージを受け取り、S3へparquet
 
 ## 事前準備
 
-- SnapshotをS3にExportするためのIAM Roleを作成する。
+- SnapshotをS3にExportするためのIAM Roleを作成する。 (S3WritableRole)
   - Policy
     ```json
     {
@@ -52,7 +52,7 @@ snapshotの作成後のイベントメッセージを受け取り、S3へparquet
       ]
     }
     ```
-- Lambda用のIAM Roleを作成する。
+- Lambda用のIAM Roleを作成する。 (RdsSnapshotExporter)
   - Policy
     ```json
     {
