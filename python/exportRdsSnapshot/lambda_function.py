@@ -9,6 +9,12 @@ def lambda_handler(event, context):
     message = json.loads(event['Records'][0]['Sns']['Message'])
     event_id = message['Event ID']
 
+    # 出力するテーブルを指定する場合は以下の配列に追加する
+    # https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html#USER_ExportSnapshot.Limits
+    # このページに書かれている文字以外が含まれている場合はエラーになる (ex. schema.table-1)
+    # e.g. "schema.table"
+    target_tables = []
+
     # 手動スナップショット取得
     EVENT_ID_MANUAL_CREATED = 'RDS-EVENT-0042'
     # 自動スナップショット取得
@@ -39,4 +45,5 @@ def lambda_handler(event, context):
         S3BucketName=os.environ['S3_BUCKET_NAME'],
         IamRoleArn=os.environ['IAM_ROLE_ARN'],
         KmsKeyId=os.environ['KMS_KEY_ID'],
+        ExportOnly=target_tables,
     )
