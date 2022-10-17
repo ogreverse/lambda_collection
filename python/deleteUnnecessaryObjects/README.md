@@ -29,7 +29,6 @@ S3の指定したbucket内でsnapshotが出力されたディレクトリを探�
             "Sid": "S3bucketPolicy",
             "Effect": "Allow",
             "Action": [
-                "s3:PutObject*",
                 "s3:ListBucket",
                 "s3:GetObject*",
                 "s3:DeleteObject*",
