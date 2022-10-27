@@ -40,8 +40,8 @@ def lambda_handler(event, context):
     # print(db_instance_name)
     # テーブル名を取り出す
     # (参考) ファイルパス: [スナップショット名]/[DB名]/[DB名].[テーブル名]/[ファイル名].gz.parquet
-    db_name = from_key.split('/')[-3]
-    table_name = from_key.split('/')[-2].split('.')[-1:][0]
+    db_name = from_key.split('/')[1]
+    table_name = from_key.split('/')[2].split('.')[-1:][0]
 
     # 日時を取り出す
     # UTCからJSTに変換を行う
@@ -59,7 +59,9 @@ def lambda_handler(event, context):
 
     # コピー先のバケットとファイルパスを指定
     to_bucket = from_bucket
-    to_filepath = '%s/%s/%s/%s/%s/%s.parquet' % (db_instance_name, db_name, table_name, date_text, hour_text, table_name)
+
+    dt = datetime.now()
+    to_filepath = '%s/%s/%s/%s/%s/%s.parquet' % (db_instance_name, db_name, table_name, date_text, hour_text, table_name + '_' + dt.strftime("%Y%m%d%H%M%s"))
 
     # 各変数を出力
     print(from_bucket)
